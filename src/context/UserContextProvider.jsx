@@ -5,11 +5,15 @@ export const UserContext = createContext();
 const UserContextProvider = ( { children } ) => {
 
 
-  const [ userData , setUserData] = useState("")
+  const [ userData , setUserData] = useState("");
+
+  const handlerSetUserData = (userName)=>{
+    setUserData(userName)
+  }
 
   let data = {
     userData,
-    setUserData,
+    handlerSetUserData,
   };
 
   return (

@@ -1,19 +1,20 @@
 import { Button, TextField } from "@mui/material";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../context/UserContextProvider";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { setUserData, userData } = useContext(UserContext);
+  const { handlerSetUserData, userData } = useContext(UserContext);
   const [name, setName] = useState("");
-  const navigate = useNavigate(); // Obtén la función navigate del hook useNavigate
+ /*  const navigate = useNavigate(); // Obtén la función navigate del hook useNavigate
   if (userData) {
     navigate("/"); // Redirige a la ruta deseada utilizando navigate
   }
-
+ */
   const handlerSubmit = (e) => {
     e.preventDefault();
-    setUserData(name);
+    handlerSetUserData(name);
+    setName("")
   };
 
   return (
