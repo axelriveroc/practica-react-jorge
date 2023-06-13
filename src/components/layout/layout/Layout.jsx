@@ -16,10 +16,11 @@ const Layout = () => {
         justifyContent: "space-around",
         width: "100%",
         alignItems: "center",
+        
       }}
     >
       <NavBar />
-      {!userData && "Aun no te has loggeado! "}
+      {!userData && <p>Aun no te has loggeado! </p>}
       {userData && <h1>Hola {userData} </h1>}
 
       <Outlet />
